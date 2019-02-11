@@ -2,8 +2,10 @@
 
 S3 is a safe place to store your static files being one the oldest services of AWS. It is an object based storage where your data is spread across multiple devices.
 
-S3 allows you to upload, where files can be from 0 bytes to 5TB. If an upload is successful, you will recieve an HTTP status code of `200`.
-It is capable of unlimited storage. All files are stored into 'Buckets' which is basically an S3 term for folders.
+- S3 allows you to upload, where files can be from 0 bytes to 5TB. 
+- If an upload is successful, you will recieve an HTTP status code of `200`.
+- It is capable of unlimited storage. 
+- All files are stored into 'Buckets' which is basically an S3 term for folders.
 
 S3 uses a universal namespace meaning all names must be **_globally_** unique.
 
@@ -22,7 +24,7 @@ When performing overwrite PUTS and DELETES, these updated and/or deleted objects
 - Key - Name of object to be stored
 - Value - Data being stored - made up of a sequence of bytes
 - Version ID - Version signifier
-- Metadata - Data about the data you are storing - date stored, size, 
+- Metadata - Data about the data you are storing - date stored, size, tags
 - Subresource
     - Access Control Lists
     - Torrents
@@ -36,19 +38,26 @@ When performing overwrite PUTS and DELETES, these updated and/or deleted objects
 - Lifecycle management
 - Versioning
 - Encryption
-- Secure data using Access Control Lists bucket policies
+- Secure data using Access Control Lists and bucket policies
+- Object-based storage only (files)
+- Not suitable to install an operating system
 
 ### Storage Tiers
 
 - **S3 (Normal)**
-	- 99.99% availability, 99.(11 9’s )
+	- 99.99% availability and 99.(11 9’s ) durability
 	- durable, reliable - stored redundantly across multiple devices in multiple facilities and is designed to sustain the loss of 2 facilities concurrently
 
 - **S3 IA (Infrequent Access)**
 	- Used for data that is accessed less frequently but requires rapid access when needed
 	- Lower fee than S3 but, are charged a retrieval fee
+	
+- **S3 One Zone - IA (Infrequent Access)**
+	- Lower cost option of less frequently acessed and dont require multiple AZ data resilience.
+	- Lower fee than S3 but, are charged a retrieval fee
 
 - **S3 Reduces Redundancy Storage (RRS)** 
+	- Is this same as one zone IA?
 	- Designed to provide 99.99% durability and 99.99% availability of objects over a given year.
 
 - **Glacier (Separate product from S3)**
@@ -59,10 +68,10 @@ When performing overwrite PUTS and DELETES, these updated and/or deleted objects
 
 ### S3 Charges
 
-- Storage
+- Storage (per gig)
 - Requests
-- Storage Management Pricing
-- Data transfer pricing
+- Storage Management Pricing (tags)
+- Data transfer pricing (b/w Cross region)
 - Transfer Acceleration
 
 #### Transfer Acceleration
