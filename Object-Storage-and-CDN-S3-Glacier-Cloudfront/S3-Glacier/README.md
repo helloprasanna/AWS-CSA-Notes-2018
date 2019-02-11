@@ -57,8 +57,9 @@ When performing overwrite PUTS and DELETES, these updated and/or deleted objects
 	- Lower fee than S3 but, are charged a retrieval fee
 
 - **S3 Reduces Redundancy Storage (RRS)** 
-	- Is this same as one zone IA?
+	- aws throws 405 error if object is lost
 	- Designed to provide 99.99% durability and 99.99% availability of objects over a given year.
+	- AWS doesn't recommend this anymore.
 
 - **Glacier (Separate product from S3)**
 	- Very cost effective but used for data archival only
