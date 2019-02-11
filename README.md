@@ -1,4 +1,6 @@
-# AWS Certified Solutions Architect - Associate Notes 2018
+# AWS Certified Solutions Architect - Associate (Professional under works) Notes 2019
+
+Revising this for 2019 CSA and Planning to include Professional notes
 
 Curated documentation/study notes on going through the [Udemy, Certified Solutions Archictect - Associate 2018](https://www.udemy.com/aws-certified-solutions-architect-associate/) course. These notes are to help myself, as well as, anyone else going through this same course study and prepare for the exam. Thanks!
 
