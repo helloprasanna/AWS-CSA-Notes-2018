@@ -27,7 +27,7 @@ Allow you to manage users and their level of access management to the AWS consol
 
 ## General Notes
 
-- Universal. Does not apply to regions at this time.
+- IAM is Universal. Does not apply to regions at this time.
 - Attach permissions to users as well as groups
 - New users have NO permissions when first created
 - New users are assigned and Access Key ID and Secret Key when first created
@@ -36,6 +36,9 @@ Allow you to manage users and their level of access management to the AWS consol
 - ALWAYS setup multifactor auth on root account
 - Customize password rotation policies
 - Unable to set billing alarm in cloud watch because of new account
+- Power User access allows all AWS services except for management of groups and users within IAM.
+- User cannot log in to the AWSconsole using AccessKeyID and Secret Access Key, instead you must generate a password for the user.
+
 
 ## Links
 
