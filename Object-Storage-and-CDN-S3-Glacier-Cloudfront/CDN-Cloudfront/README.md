@@ -8,9 +8,18 @@ A system of distributed servers that deliver webpages and other content to a use
 
 CloudFront can be used to deliver your entire website, including dynamic content, static, streaming and interactive content using a global network of edge locations.
 
-Requests for your content are automically routed to the nearest Edge Location, so content is delivered with the best possible performance.
+Requests for your content are automatically routed to the nearest Edge Location, so content is delivered with the best possible performance.
 
-CloudFront is optimized to work with other Amazon Web Services like S3, EC2, Elastic Load Balancing and Route 53. CloudFront also works seamlessly with any non-AWS origin server which stores the original,definitive versions of your files.
+CloudFront is optimised to work with other Amazon Web Services like S3, EC2, Elastic Load Balancing and Route 53. CloudFront also works seamlessly with any non-AWS origin server which stores the original, definitive versions of your files.
+
+Edge locations are not just read-only, you can also write to them
+
+Objects are cached for TTL (time to live), you will be charged for clearing cache (Using invalidation option).
+
+CF can have one of two types of Geo-restrictions
+- Black list
+- White list
+
 
 ## Key Terminology
 

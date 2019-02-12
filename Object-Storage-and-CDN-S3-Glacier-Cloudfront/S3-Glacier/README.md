@@ -2,9 +2,9 @@
 
 S3 is a safe place to store your static files being one the oldest services of AWS. It is an object based storage where your data is spread across multiple devices.
 
-- S3 allows you to upload, where files can be from 0 bytes to 5TB. 
+- S3 allows you to upload, where files can be from 0 bytes to 5TB.
 - If an upload is successful, you will recieve an HTTP status code of `200`.
-- It is capable of unlimited storage. 
+- It is capable of unlimited storage.
 - All files are stored into 'Buckets' which is basically an S3 term for folders.
 
 S3 uses a universal namespace meaning all names must be **_globally_** unique.
@@ -29,7 +29,7 @@ When performing overwrite PUTS and DELETES, these updated and/or deleted objects
     - Access Control Lists
     - Torrents
 
-## S3 Basics 
+## S3 Basics
 
 - Built for 99.99% availability for the S3 platform
 - Amazon guarantee 99.9% availability - always available
@@ -51,12 +51,12 @@ When performing overwrite PUTS and DELETES, these updated and/or deleted objects
 - **S3 IA (Infrequent Access)**
 	- Used for data that is accessed less frequently but requires rapid access when needed
 	- Lower fee than S3 but, are charged a retrieval fee
-	
+
 - **S3 One Zone - IA (Infrequent Access)**
 	- Lower cost option of less frequently acessed and dont require multiple AZ data resilience.
 	- Lower fee than S3 but, are charged a retrieval fee
 
-- **S3 Reduces Redundancy Storage (RRS)** 
+- **S3 Reduces Redundancy Storage (RRS)**
 	- aws throws 405 error if object is lost
 	- Designed to provide 99.99% durability and 99.99% availability of objects over a given year.
 	- AWS doesn't recommend this anymore.
@@ -85,7 +85,7 @@ When performing overwrite PUTS and DELETES, these updated and/or deleted objects
 
 By default all newly created buckets are **PRIVATE**. You need to manually change permissions to access resources.
 
-You can set policies and permissions using either Access Control Lists or Bucket Policies. 
+You can set policies and permissions using either Access Control Lists or Bucket Policies.
 
 You have the ability to make a bucket private but all certian objects in that bucket to be public.
 
@@ -107,6 +107,28 @@ S3 buckets can be configured to create access logs which log all requests made t
 		- **SSE-C** - Server Side Encryption with Customer Provided Keys. You manage encryption key.
 	- Client Side Encryption
 		- Encrypt data on client side and upload to S3
+
+## Cross Region Replication
+
+1. Cross region Replication requires Versioning
+1. Old objects are not replicated automatically, only new and changed are replicated
+1. Use CLI to transfer files
+    - aws s3 cp --recursive s3://fromBucket s3://archieveBucket
+    - CLI user must have programatic access
+1. Delete file marker won't be replicated
+1. Can't replicate multiple buckets or daisy chaining
+
+
+## Glacier
+- Can be applied to current and previous versions
+
+## Security
+- By default buckets are private.
+- Can turn logging on to find who is accessing bucket
+- Access Control can be setup Using
+  - Bucket Policies
+  - Access Control Lists
+
 
 ## Links
 

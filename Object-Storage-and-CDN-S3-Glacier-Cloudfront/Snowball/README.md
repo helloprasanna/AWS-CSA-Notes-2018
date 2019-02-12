@@ -8,7 +8,7 @@ Petabyte-scale data transport solution that uses secure appliances to transfer l
 
 Using Snowball addresses common challenges with large-scale data transfers including high network costs, long transfer times, and security concerns.
 
-Transferring data with Snowball is simple, fast, secure and can be as little as 1/5 the cost of high-speed internet. 
+Transferring data with Snowball is simple, fast, secure and can be as little as 1/5 the cost of high-speed internet.
 
 80TB Snowballs are available in all regions. Snowball uses multiple layers of security designed to protect your data including tamper-resistent enclosures, 256-bit encryption, and an industry-standard Trusted Platform Module (TPM) designed to ensure both security and full chain-of-custody of your data.
 
