@@ -55,7 +55,7 @@ Each tape gateway is preconfigured with a media changer and tape drivers, which 
 ## Tips (Summary)
 
 - File Gateway - For flat files, stored directly to S3
-- Volume Gateway:
+- Volume Gateway: Uses iSCSI volume
   - Stored Volumes - Entire dataset is stored on site and is asynchronously backed up to S3
   - Cached Volumes - Entire dataset is stored on S3 and the most frequently accessed data is cached on site.
 - Gateway Virtual Tape Library (VTL)

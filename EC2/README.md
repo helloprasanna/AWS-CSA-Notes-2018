@@ -109,7 +109,7 @@ _TLDR; A disk in the cloud that you attach to your EC2 instances_
   - File server
   - Cannot be a boot volume
 - Magnetic (Standard)
-  - Lowest cost per GB of all EBS volume types that is bootable. Magnetic volumes are ideal for workloads where data is accessed infrequently, and applications where the lowest storage cost is important
+  - Lowest cost per GB of all EBS volume types that is bootable. Magnetic volumes are ideal for workloads where data is accessed infrequently, and applications where the lowest storage cost is important. This is legacy now!
 
 ## Let's get our hands dirty! Launch an EC2 instance lab!
 
@@ -119,6 +119,10 @@ _TLDR; A disk in the cloud that you attach to your EC2 instances_
 - On an EBS-backed instance, the default action is for the root EBS volume to be deleted when the instance is terminated
 - EBS Root Volume of you DEFAULT AMI's cannot be encrypted. You can also use a third party tool (such as bit locker) to encrypt the root volume, or this can be done when creating AMI's (future lab) in the AWS console or using the API.
 - Additional volumes can be encrypted.
+- Snapshots of encrypted volumes are encrypted automatically
+- Volumes restored from enc snapshots are also enc
+- Snapshots can be shared, but only if they are un encrypted.
+- Snapshots can be share with other accounts or public
 
 ## Security Groups
 
@@ -156,7 +160,7 @@ A security group is a virtual firewall that's controlling traffic to your EC2 in
   - How can we do this?
     - Freeze the file system
     - Unmount the RAID Array
-    - Shutting down the associated EC2 instance.
+    - Shutting down the associated EC2 instance. (Easiest option)
 
 ## Create an AMI lab - Volumes vs. Snapshots
 
@@ -172,6 +176,8 @@ A security group is a virtual firewall that's controlling traffic to your EC2 in
   - Said snapshots can be shared with other AWS accoutns of made public
 
 ## AMI Types
+
+**AMI - Amazon machine images**
 
 ### What should you select your AMI based on?
 
@@ -195,6 +201,12 @@ The root device for an instance launched from the AMI is an Amazon EBS volume cr
 
 The root device for an instance launched from the AMI is an instance store volume created from a template stored in Amazon S3.
 
+Instance store volumes cannot be stopped and if the host fails you will lose data.
+
+Instance store volumes will be deleted on termination.
+
+You can reboot both and you will not lose any data.
+
 ## Elastic Load Balancers
 
 ### What is a load balancer?
@@ -217,13 +229,17 @@ Best suited for load balancing of TCP traffic where extreme performance is requi
 
 ### Classic Load Balancer _(OG, Legacy Load Balancer)_
 
-Used to load balance HTTP(S) applications and use Layer 7-specific features, such as X-Forwarded and stick-sessions. You can use strict Layer 4 load balancing for applications that rely purely on the TCP protocol.
+Used to load balance HTTP(S) applications and use Layer 7-specific features, such as X-Forwarded and stick-sessions. You can use strict Layer 4 load balancing for applications that rely purely on the TCP protocol. If you need IPv4 for the end user, look for X-Forwarded-for header.
 
 ### 504 Error
 
 - If no response or timeout, the ELB (Elastic Load Balancer) responds with status code 504.
+
 - Internal Server Error type - DB Layer or Web Server Layer.
+
 - Solution: Identify issue where failing and scale up or out where possible.
+
+  
 
 ## Placement Groups (Exam MUST KNOW!!)
 
