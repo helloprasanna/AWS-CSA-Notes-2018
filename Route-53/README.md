@@ -83,6 +83,8 @@ This is the default routing policy when you create a new record set. This is the
 Weighted Routing Policies let you split your traffic based on different weights assigned.
 For example you can set 10% of your traffic to go to US-EAST-1 and 90% to go to EU-WEST-1
 
+Note: Weights are specified as ratios 25 IP1 and 25 IP2 results in 50% traffic for each of them
+
 ### Latency
 
 Latency based routing allows you to route your traffic based on the lowest network latency for your end user (ie which region will give them the fastest response time)
@@ -97,8 +99,17 @@ Route 53 will monitor the health of your primary site using a health check.
 
 A health check monitors the health of your endpoints.
 
+**Note**: It took some time for DNS to propagate the change and Chrome URL timedout in the lesson. Eventually it reloaded the site from passive URL config.
+
 ### Geolocation
 
 Geolocation routing lets you choose where your traffic will be sent based on the geographic location of your users (ie the location from which DNS queries originate). 
 
 For example, you might want all queries from Europe to be routed to a fleet of EC2 instances that are specifically configured for your European customers. These servers may have the local language of your European customers and all prices are displayed in Euros.
+
+### Multivalue Answer
+
+Lets the traffice to multiple IP addresses randomly and if one of them becomes unavailable then it wont be routed to that address.
+
+
+

@@ -13,3 +13,4 @@ Remeber the different routing policies and their use cases.
 - Latency
 - Failover
 - Geolocation
+- Multivalue

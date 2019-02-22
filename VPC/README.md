@@ -18,6 +18,8 @@ Additionally, you can create a Hardware Virtual Private Network (VPN) connection
 
 Use (cidr.xyz)[https://cidr.xyz/] to figure out subnet ranges within a VPC
 
+![VPC Diagram](Screenshot 2019-02-22 at 17.12.13.png)
+
 ### What can you do with a VPC?
 
 - Launch instances into a subnet of your choosing
