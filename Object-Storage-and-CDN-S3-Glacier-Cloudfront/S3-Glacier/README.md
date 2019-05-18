@@ -13,6 +13,12 @@ _Example S3 URL:_
 
 **`https://s3-eu-west-1.amazonaws.com/[bucket-name]`**
 
+_Example S3 Static Website URL:_
+
+**`<bucket-name>.s3-website.<AWS-region>.amazonaws.com`**
+
+
+
 ## Data Consistency
 
 S3 maintains **_Read After Write_** consistency for PUTS of new objects. Meaning, as soon a new object is uploaded or written, it is available to read/view.
@@ -128,6 +134,16 @@ S3 buckets can be configured to create access logs which log all requests made t
 - Access Control can be setup Using
   - Bucket Policies
   - Access Control Lists
+
+
+
+## Cloud Front
+
+**Perfect Forward Secrecy** is a feature that provides additional safeguards against the eavesdropping of encrypted data, through the use of a unique random session key. This prevents the decoding of captured data, even if the secret long-term key is compromised.
+
+**CloudFront and Elastic Load Balancing** are the two AWS services that support Perfect Forward Secrecy. 
+
+
 
 
 ## Links

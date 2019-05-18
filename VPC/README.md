@@ -78,7 +78,7 @@ Use (cidr.xyz)[https://cidr.xyz/] to figure out subnet ranges within a VPC
 - NACL have separate inbound and outbound rules, and each rule can either allow or deny traffic.
 - NACL are stateless; responses to allowed inbound traffic are subject to the rules for outbund traffic
 
-## ALB
+## ALB and Custom VPC
 
 - You need at least 2 public subnets in order to deply and application load balancer
 

@@ -20,6 +20,8 @@ Allows you to pay a fixed rate by the hour (or by the second) with no commitment
 
 Provides you with a capacity reservation, and offer a significant discount on the hourly charge for an instance. 1 year or 3 year terms.
 
+Reserved instances can be transferred from one Availability Zone to another.
+
 **_Use Cases_**
 
 - Applications with steady state or predictable usage
@@ -117,6 +119,8 @@ _TLDR; A disk in the cloud that you attach to your EC2 instances_
 
 - Termination protection is turned off by default, you **MUST** turn it on.
 - On an EBS-backed instance, the default action is for the root EBS volume to be deleted when the instance is terminated
+- By default, EBS volumes that are attached to a running instance automatically detach from the instance with their data intact when that instance is terminated. 
+- By default, EBS volumes that are created and attached to an instance at launch are deleted when that instance is terminated. You can modify this behavior by changing the value of the flag `DeleteOnTermination` to `false`when you launch the instance.
 - EBS Root Volume of you DEFAULT AMI's cannot be encrypted. You can also use a third party tool (such as bit locker) to encrypt the root volume, or this can be done when creating AMI's (future lab) in the AWS console or using the API.
 - Additional volumes can be encrypted.
 - Snapshots of encrypted volumes are encrypted automatically

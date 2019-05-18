@@ -111,6 +111,24 @@ _Note: ELB's do not have IP Addresses, only found by DNS namespace_
 - **Events** - Helps you to repsond to state changes in your AWS resources.
 - **Logs** - Helps you to aggregate, monitor and store logs.
 
+###CloudWatch agent 
+
+Default monitoring allows monitoring CPU utilization, Network utilization, Disk performance, and Disk Reads/Writes. In case that you need to monitor the below items, you need to prepare a custom metric using a Perl or other shell script, as there are no ready to use metrics for these:
+
+1. Memory utilization
+2. disk swap utilization
+3. disk space utilization
+4. page file utilization
+5. log collection
+
+Take note that there is a multi-platform CloudWatch agent which can be installed on both Linux and Windows-based instances. You can use a single agent to collect both system metrics and log files from Amazon EC2 instances and on-premises servers. 
+
+###CloudWatch Logs Insights
+
+Amazon CloudWatch Logs Insights is an interactive, pay-as-you-go, and integrated log analytics capability for CloudWatch Logs. 
+
+
+
 ## Placement Groups
 
 - A Clustered Placement Group can not span multiple Availibitity Zones.
